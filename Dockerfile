@@ -4,8 +4,17 @@
 FROM alpine:3.17
 MAINTAINER boredazfcuk
 
-ENV config_dir="/config" \
-   TZ="UTC"
+ENV config_dir="/config"
+ENV TZ="Asia/Shanghai"
+ENV user="root"
+ENV user_id=0
+ENV group_id=0
+ENV force_gid="True"
+ENV folder_structure="{:%Y/%m}"
+ENV icloud_china="True"
+ENV skip_check="True"
+ENV download_path="/iCloud"
+ENV synchronisation_interval=86400
 
 # Container version serves no real purpose. Increment to force a container rebuild.
 ARG container_version="1.0.21"
