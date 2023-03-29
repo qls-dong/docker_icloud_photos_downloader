@@ -55,6 +55,9 @@ RUN echo "Git repo updated: 1" && \
     rm -r "${pyicloud_temp_dir}" "${app_temp_dir}" && \
     apk del --no-progress --purge build-deps
 
+RUN apk update
+RUN apk add bash vim
+
 COPY --chmod=0755 sync-icloud.sh /usr/local/bin/sync-icloud.sh
 COPY --chmod=0755 healthcheck.sh /usr/local/bin/healthcheck.sh
 
